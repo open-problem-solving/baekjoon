@@ -6,8 +6,6 @@ using namespace std;
 #define INT32_INF 0x3f3f3f3f
 #define INT64_INF 0x3f3f3f3f3f3f3f3f
 
-#include <algorithm>
-
 void
 solve (void)
 {
