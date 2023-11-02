@@ -29,27 +29,16 @@ solve (void)
 	cin >> N;
 	cin.ignore ();
 
-	bool flag = false;
 	string S;
 
 	for (int i = 0; i < N; i++) {
 		getline (cin, S);
-
-		if (flag) {
-			continue;
-		}
-
 		if (promise_set.count (S) == 0) {
-			flag = true;
+            cout << "Yes";
+            return;
 		}
 	}
-
-	if (flag) {
-		cout << "Yes";
-	}
-	else {
-		cout << "No";
-	}
+	cout << "No";
 }
 
 int
