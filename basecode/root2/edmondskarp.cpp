@@ -16,18 +16,18 @@ private:
 	vector<vector<int>> flow, capacity;
 	vector<int> parent;
 public:
-	EdmondsKarp (int n, int s, int e) {
-		num_vert = n;
-		src = s;
-		sink = e;
+	EdmondsKarp (int _n, int _s, int _e) {
+		num_vert = _n;
+		src = _s;
+		sink = _e;
 
-		adj_list.resize (n + 1);
-		flow.resize (n + 1);
-		capacity.resize (n + 1);
-		parent.resize (n + 1);
-		for (int i = 1; i <= n; i++) {
-			flow[i].resize (n + 1);
-			capacity[i].resize (n + 1);
+		adj_list.resize (_n + 1);
+		flow.resize (_n + 1);
+		capacity.resize (_n + 1);
+		parent.resize (_n + 1);
+		for (int i = 1; i <= _n; i++) {
+			flow[i].resize (_n + 1);
+			capacity[i].resize (_n + 1);
 		}
 	}
 
@@ -42,7 +42,7 @@ public:
 	}
 
 	bool
-	find_shortest_path_bfs () {
+	find_shortest_path_bfs (void) {
 		queue<int> q;
 		vector<bool> visited (num_vert + 1);
 
@@ -75,7 +75,7 @@ public:
 	}
 
 	int
-	get_max_flow () {
+	get_max_flow (void) {
 		int u, v;
 		int max_flow = 0;
 		parent[src] = -1;
